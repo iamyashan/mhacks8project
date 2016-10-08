@@ -8,7 +8,7 @@ active_games = {}
 
 @app.route('/')
 def index():
-    return send_from_directory('views','home.html')
+    return send_from_directory('static','home.html')
 
 @app.route('/create', methods=['POST'])
 def create():
@@ -20,7 +20,7 @@ def create():
 
 @app.route('/<path:path>')
 def game_page(path):
-    return current_app.send_static_file('game.html')
+    return send_from_directory('static','game.html')
 
 if __name__ == '__main__':
     # listen on external IPs
