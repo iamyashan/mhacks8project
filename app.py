@@ -10,11 +10,12 @@ active_games = {}
 def index():
     return send_from_directory('static','home.html')
 
+chars = ['a', 'b', 'c']
 @app.route('/create', methods=['POST'])
 def create():
     gameid = ''
     while gameid == '' or gameid in active_games:
-        gameid.append(c)
+        gameid += (random.choice(chars))
     active_games[gameid] = Game()
     return id
 
