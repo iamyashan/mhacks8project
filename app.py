@@ -13,11 +13,11 @@ def index():
 chars = ['a', 'b', 'c']
 @app.route('/create', methods=['POST'])
 def create():
-    gameid = ''
-    while gameid == '' or gameid in active_games:
-        gameid += (random.choice(chars))
+    gameid = random.choice(chars)
+    while gameid in active_games:
+        gameid += random.choice(chars)
     active_games[gameid] = Game()
-    return id
+    return gameid
 
 @app.route('/<path:path>')
 def game_page(path):
