@@ -14,7 +14,7 @@ def index():
 def create():
     gameid = ''
     while gameid == '' or gameid in active_games:
-        game.append(c)
+        gameid.append(c)
     active_games[gameid] = Game()
     return id
 
