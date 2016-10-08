@@ -1,6 +1,5 @@
 from flask import Flask, current_app
 from game import Game
-import requests
 import random
 
 app = Flask(__name__, template_folder='views')
