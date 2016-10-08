@@ -1,4 +1,4 @@
-from flask import Flask, current_app
+from flask import Flask, send_from_directory
 from game import Game
 import random
 
@@ -8,7 +8,7 @@ active_games = {}
 
 @app.route('/')
 def index():
-    return current_app.send_static_file('index.html')
+    return send_from_directory('views','home.html')
 
 @app.route('/create', methods=['POST'])
 def create():
@@ -24,4 +24,4 @@ def game_page(path):
 
 if __name__ == '__main__':
     # listen on external IPs
-    app.run(host='localhost', port=80, debug=True)
+    app.run(host='localhost', port=3000, debug=True)
