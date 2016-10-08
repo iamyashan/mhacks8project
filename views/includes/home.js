@@ -4,4 +4,9 @@ $(function(){
 		window.location.replace("/"+token);
 	});
 	
+	$('#create-new-game').click(function(){
+		$.post("/create", function(data){
+			alert(0);
+		});
+	});
 });
